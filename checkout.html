@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago — Autobaratón</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-gray-50">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 flex justify-between h-16 items-center">
+            <a href="index.html" class="text-2xl font-bold">Auto<span class="text-emerald-500">baratón</span></a>
+            <div class="flex items-center gap-2 text-sm text-slate-600">
+                <i class="fas fa-lock text-emerald-500"></i> Pago seguro
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 py-10">
+        <h1 class="text-3xl font-bold mb-2">Finalizar compra</h1>
+        <p class="text-slate-500 mb-8 text-sm">Completa tus datos para recibir tu auto</p>
+
+        <form id="form-checkout" class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+            <div class="lg:col-span-2 space-y-6">
+                
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4"><i class="fas fa-map-marker-alt text-emerald-500 mr-2"></i>Dirección de entrega</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input required type="text" placeholder="Nombre completo" class="input-field">
+                        <input required type="tel" placeholder="Teléfono" class="input-field">
+                        <input required type="text" placeholder="Calle y número" class="input-field md:col-span-2">
+                        <input required type="text" placeholder="Colonia" class="input-field">
+                        <input required type="text" placeholder="Código Postal" class="input-field">
+                        <input required type="text" placeholder="Ciudad" class="input-field">
+                        <input required type="text" placeholder="Estado" class="input-field">
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm">
+                    <h3 class="font-bold text-lg mb-4"><i class="fas fa-credit-card text-emerald-500 mr-2"></i>Método de pago</h3>
+                    <div class="flex gap-2 mb-4 text-slate-400">
+                        <i class="fab fa-cc-visa text-2xl"></i>
+                        <i class="fab fa-cc-mastercard text-2xl"></i>
+                        <i class="fab fa-cc-amex text-2xl"></i>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input required type="text" placeholder="Número de tarjeta" maxlength="19" class="input-field md:col-span-2" id="card-number">
+                        <input required type="text" placeholder="Nombre del titular" class="input-field md:col-span-2">
+                        <input required type="text" placeholder="MM/AA" maxlength="5" class="input-field" id="card-expiry">
+                        <input required type="text" placeholder="CVV" maxlength="4" class="input-field" id="card-cvv">
+                    </div>
+                    <p class="text-xs text-slate-400 mt-3"><i class="fas fa-shield-alt mr-1"></i>Tus datos están protegidos con encriptación SSL.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-sm h-fit sticky top-24">
+                <h3 class="font-bold text-lg mb-4">Tu pedido</h3>
+                <div id="checkout-items" class="space-y-3 mb-4 text-sm max-h-60 overflow-y-auto"></div>
+                <hr class="my-3">
+                <div class="space-y-1 text-sm mb-4">
+                    <div class="flex justify-between"><span>Subtotal</span><span id="checkout-subtotal">$0</span></div>
+                    <div class="flex justify-between"><span>Trámites</span><span>$5,000</span></div>
+                    <div class="flex justify-between font-bold text-lg pt-2 border-t"><span>Total</span><span id="checkout-total">$0</span></div>
+                </div>
+                <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl font-bold">
+                    <i class="fas fa-lock mr-1"></i> Pagar ahora
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <div id="modal-exito" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-8 max-w-md text-center">
+            <div class="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-emerald-500 text-3xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-2">¡Compra realizada!</h2>
+            <p class="text-slate-500 mb-6">Tu auto llegará en los próximos 5 días hábiles. Recibirás un correo con los detalles.</p>
+            <a href="index.html" class="block bg-slate-900 text-white py-3 rounded-xl font-semibold">Volver al inicio</a>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
