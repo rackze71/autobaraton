@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador de Autos — Autobaratón</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-slate-50">
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Auto<span>baratón</span></a>
+        <div class="nav-links">
+            <a href="index.html">Catálogo</a>
+            <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+</nav>
+
+<main class="container page-container">
+    <div class="page-header">
+        <h1>Comparador de Autos</h1>
+        <p>Selecciona hasta 3 autos para comparar</p>
+    </div>
+
+    <div class="selector-autos">
+        <h3>Selecciona autos para comparar:</h3>
+        <div id="selector-grid" class="selector-grid"></div>
+    </div>
+
+    <div id="comparador-vacio" class="empty-state">
+        <div class="empty-icon"><i class="fas fa-balance-scale"></i></div>
+        <h3>Selecciona autos para comparar</h3>
+        <p>Elige al menos 2 autos de la lista superior</p>
+    </div>
+
+    <div id="comparador-tabla" class="hidden">
+        <div class="tabla-container">
+            <table id="tabla-comparacion" class="tabla-comparacion"></table>
+        </div>
+        <button onclick="limpiarComparador()" class="btn-text"><i class="fas fa-trash"></i> Limpiar comparación</button>
+    </div>
+</main>
+
+<a href="https://wa.me/521234567890" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autobaratón — Autos Nuevos 2025</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-slate-50">
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Auto<span>baratón</span></a>
+        <div class="nav-links">
+            <a href="#catalogo">Catálogo</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="comparador.html">Comparar</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="favoritos.html"><i class="far fa-heart"></i></a>
+            <a href="carrito.html" class="cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" class="cart-badge">0</span>
+            </a>
+            <button id="toggle-dark" class="dark-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+        <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <span class="hero-badge">🏆 Plataforma #1 en autos nuevos</span>
+        <h1>Tu próximo auto <br><span class="gradient-text">te está esperando</span></h1>
+        <p>Disponibilidad inmediata, financiamiento fácil y entrega a domicilio en todo el país.</p>
+        <div class="hero-actions">
+            <a href="#catalogo" class="btn-primary">Ver catálogo <i class="fas fa-arrow-right"></i></a>
+            <a href="quiz.html" class="btn-secondary">Encontrar mi auto <i class="fas fa-magic"></i></a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat"><span class="stat-num" data-target="500">0</span><span class="stat-label">Autos disponibles</span></div>
+            <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">Marcas en stock</span></div>
+            <div class="stat"><span class="stat-num" data-target="98">0</span><span class="stat-label">% Clientes felices</span></div>
+        </div>
+    </div>
+</header>
+
+<section class="promo-bar">
+    <div class="promo-item"><i class="fas fa-shield-alt"></i> Garantía de fábrica</div>
+    <div class="promo-item"><i class="fas fa-truck"></i> Entrega gratis</div>
+    <div class="promo-item"><i class="fas fa-undo"></i> 7 días de prueba</div>
+    <div class="promo-item"><i class="fas fa-percentage"></i> Financiamiento 0%</div>
+</section>
+
+<section id="catalogo" class="catalogo-section">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <h2>Modelos destacados</h2>
+                <p>Los más buscados esta semana</p>
+            </div>
+        </div>
+
+        <div class="filtros-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="buscador" placeholder="Buscar marca, modelo o año...">
+            </div>
+            <div class="filtros">
+                <select id="filtro-marca">
+                    <option value="">Todas las marcas</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Kia">Kia</option>
+                </select>
+                <select id="filtro-trans">
+                    <option value="">Transmisión</option>
+                    <option value="Automático">Automático</option>
+                    <option value="CVT">CVT</option>
+                    <option value="DSG">DSG</option>
+                </select>
+                <select id="filtro-precio">
+                    <option value="">Precio máximo</option>
+                    <option value="400000">Hasta $400,000</option>
+                    <option value="500000">Hasta $500,000</option>
+                    <option value="600000">Hasta $600,000</option>
+                </select>
+                <select id="filtro-orden">
+                    <option value="">Ordenar por</option>
+                    <option value="precio-asc">Precio: menor a mayor</option>
+                    <option value="precio-desc">Precio: mayor a menor</option>
+                    <option value="km-asc">Menor kilometraje</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="catalogo-grid" class="catalogo-grid"></div>
+        <div id="sin-resultados" class="hidden sin-resultados">
+            <i class="fas fa-search"></i>
+            <h3>No encontramos autos</h3>
+            <p>Intenta con otros filtros</p>
+        </div>
+    </div>
+</section>
+
+<section id="beneficios" class="beneficios-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>¿Por qué elegirnos?</h2>
+            <p>Más de 15 años en el mercado automotriz</p>
+        </div>
+        <div class="beneficios-grid">
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Garantía de fábrica</h3>
+                <p>Todos nuestros autos incluyen la garantía oficial del fabricante, sin cargos adicionales.</p>
+            </div>
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <h3>Financiamiento flexible</h3>
+                <p>Planes desde 12 hasta 60 meses con las mejores tasas. Aprobación rápida en 24 horas.</p>
+            </div>
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fas fa-truck"></i></div>
+                <h3>Entrega a domicilio</h3>
+                <p>Recibe tu auto en la puerta de tu casa sin costo adicional dentro del área metropolitana.</p>
+            </div>
+            <div class="beneficio-card">
+                <div class="beneficio-icon"><i class="fas fa-tools"></i></div>
+                <h3>Servicio posventa</h3>
+                <p>Mantenimiento y soporte técnico especializado durante toda la vida de tu vehículo.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="simulador-section">
+    <div class="container">
+        <div class="simulador-card">
+            <div class="simulador-info">
+                <span class="badge">Calculadora</span>
+                <h2>Simula tu financiamiento</h2>
+                <p>Conoce tu mensualidad en segundos</p>
+                <div class="simulador-form">
+                    <div class="input-group">
+                        <label>Precio del auto</label>
+                        <input type="number" id="sim-precio" value="400000" min="100000">
+                    </div>
+                    <div class="input-group">
+                        <label>Enganche: <span id="sim-enganche-val">20%</span></label>
+                        <input type="range" id="sim-enganche" min="10" max="50" value="20">
+                    </div>
+                    <div class="input-group">
+                        <label>Plazo: <span id="sim-plazo-val">36 meses</span></label>
+                        <input type="range" id="sim-plazo" min="12" max="60" value="36" step="12">
+                    </div>
+                    <div class="resultado-financiamiento">
+                        <small>Tu mensualidad estimada</small>
+                        <h3 id="sim-mensualidad">$0</h3>
+                        <small>con 12% anual</small>
+                    </div>
+                </div>
+            </div>
+            <div class="simulador-visual">
+                <div class="car-visual">
+                    <i class="fas fa-car-side"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonios" class="testimonios-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <p>Miles de familias ya confían en nosotros</p>
+        </div>
+        <div class="testimonios-grid">
+            <div class="testimonio-card">
+                <div class="stars">★★★★★</div>
+                <p>"Excelente atención y proceso muy sencillo. Mi Camry llegó en perfectas condiciones y el financiamiento fue aprobado el mismo día."</p>
+                <div class="testimonio-autor">
+                    <div class="avatar">CR</div>
+                    <div><strong>Carlos Ramírez</strong><small>Toyota Camry 2025</small></div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <div class="stars">★★★★★</div>
+                <p>"Me ayudaron a encontrar el auto ideal para mi familia. La entrega a domicilio fue una ventaja enorme. Totalmente recomendados."</p>
+                <div class="testimonio-autor">
+                    <div class="avatar">ML</div>
+                    <div><strong>María López</strong><small>Honda CR-V 2025</small></div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <div class="stars">★★★★★</div>
+                <p>"El servicio posventa es increíble. Ya llevo 8 meses con mi Jetta y cada visita de mantenimiento es rápida y sin sorpresas."</p>
+                <div class="testimonio-autor">
+                    <div class="avatar">JM</div>
+                    <div><strong>Jorge Méndez</strong><small>Volkswagen Jetta 2025</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contacto" class="contacto-section">
+    <div class="container">
+        <div class="contacto-card">
+            <div>
+                <h2>¿Listo para tu nueva aventura?</h2>
+                <p>Déjanos tus datos y un asesor te contactará en menos de 2 horas.</p>
+            </div>
+            <form class="contacto-form" onsubmit="event.preventDefault(); mostrarToast('Te contactaremos pronto'); this.reset();">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="tel" placeholder="Teléfono" required>
+                <select required>
+                    <option value="">¿Qué auto te interesa?</option>
+                    <option>Toyota Camry 2025</option>
+                    <option>Nissan Sentra 2025</option>
+                    <option>Honda CR-V 2025</option>
+                    <option>Mazda CX-5 2025</option>
+                    <option>Volkswagen Jetta 2025</option>
+                    <option>Kia Sportage 2025</option>
+                    <option>Otro modelo</option>
+                </select>
+                <button type="submit" class="btn-primary">Solicitar información</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="logo">Auto<span>baratón</span></div>
+                <p>La mejor experiencia en compra de autos nuevos.</p>
+                <div class="social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Comprar</h4>
+                <a href="#catalogo">Catálogo</a>
+                <a href="comparador.html">Comparar</a>
+                <a href="quiz.html">Quiz</a>
+            </div>
+            <div>
+                <h4>Empresa</h4>
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Blog</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div>
+                <h4>Legal</h4>
+                <a href="#">Aviso de privacidad</a>
+                <a href="#">Términos y condiciones</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Autobaratón. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/527442854273" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<button id="back-to-top" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+<script src="app.js"></script>
+</body>
+</html>

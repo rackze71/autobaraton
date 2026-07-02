@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mis Favoritos — Autobaratón</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-slate-50">
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Auto<span>baratón</span></a>
+        <div class="nav-links">
+            <a href="index.html">Catálogo</a>
+            <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+</nav>
+
+<main class="container page-container">
+    <div class="page-header">
+        <h1>Mis Favoritos</h1>
+        <p id="fav-count">0 autos guardados</p>
+    </div>
+
+    <div id="fav-vacio" class="empty-state">
+        <div class="empty-icon"><i class="far fa-heart"></i></div>
+        <h3>No tienes favoritos aún</h3>
+        <p>Guarda los autos que más te gusten para verlos aquí</p>
+        <a href="index.html" class="btn-primary">Ver catálogo</a>
+    </div>
+
+    <div id="fav-grid" class="hidden catalogo-grid"></div>
+</main>
+
+<a href="https://wa.me/521234567890" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<script src="app.js"></script>
+</body>
+</html>

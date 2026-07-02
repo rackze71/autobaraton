@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Carrito — Autobaratón</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-slate-50">
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Auto<span>baratón</span></a>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-arrow-left"></i> Seguir comprando</a>
+        </div>
+    </div>
+</nav>
+
+<main class="container page-container">
+    <div class="page-header">
+        <h1>Tu Carrito</h1>
+        <p id="cart-items-count">0 autos en tu carrito</p>
+    </div>
+
+    <div id="carrito-vacio" class="empty-state">
+        <div class="empty-icon"><i class="fas fa-shopping-cart"></i></div>
+        <h3>Tu carrito está vacío</h3>
+        <p>Agrega autos desde el catálogo para comenzar</p>
+        <a href="index.html" class="btn-primary">Ver catálogo</a>
+    </div>
+
+    <div id="carrito-contenido" class="hidden carrito-layout">
+        <div class="carrito-items" id="carrito-items"></div>
+        <div class="carrito-resumen">
+            <h3>Resumen</h3>
+            <div class="resumen-line"><span>Subtotal</span><span id="resumen-subtotal">$0</span></div>
+            <div class="resumen-line"><span>Trámites</span><span>$5,000</span></div>
+            <div class="resumen-line"><span>Entrega</span><span class="text-emerald-500">Gratis</span></div>
+            <hr>
+            <div class="resumen-total"><span>Total</span><span id="resumen-total">$0</span></div>
+            <a href="checkout.html" class="btn-primary btn-full">Proceder al pago <i class="fas fa-arrow-right"></i></a>
+            <button onclick="vaciarCarrito()" class="btn-text">Vaciar carrito</button>
+        </div>
+    </div>
+</main>
+
+<a href="https://wa.me/521234567890" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<script src="app.js"></script>
+</body>
+</html>

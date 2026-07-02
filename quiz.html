@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Encuentra tu auto ideal — Autobaratón</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body class="bg-slate-50">
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">Auto<span>baratón</span></a>
+        <div class="nav-links">
+            <a href="index.html">Catálogo</a>
+            <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </div>
+</nav>
+
+<main class="container page-container">
+    <div class="page-header">
+        <h1>Encuentra tu auto ideal</h1>
+        <p>Responde 3 preguntas y te recomendaremos el auto perfecto</p>
+    </div>
+
+    <div id="quiz-container" class="quiz-card">
+        <div class="quiz-progress">
+            <div class="progress-bar-quiz">
+                <div id="quiz-progress-bar" class="progress-fill" style="width: 33%"></div>
+            </div>
+            <small>Pregunta <span id="quiz-current">1</span> de 3</small>
+        </div>
+        <h2 id="quiz-pregunta"></h2>
+        <div id="quiz-opciones" class="quiz-opciones"></div>
+        <div class="quiz-nav">
+            <button id="quiz-back" class="btn-secondary" onclick="quizAnterior()" disabled><i class="fas fa-arrow-left"></i> Atrás</button>
+            <button id="quiz-next" class="btn-primary" onclick="quizSiguiente()">Siguiente <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div id="quiz-resultado" class="hidden resultado-quiz">
+        <div class="resultado-icon"><i class="fas fa-magic"></i></div>
+        <h2>Tu auto ideal es:</h2>
+        <div id="auto-recomendado" class="auto-recomendado"></div>
+        <div class="resultado-razones">
+            <h3>¿Por qué este auto?</h3>
+            <ul id="razones-lista"></ul>
+        </div>
+        <div class="resultado-actions">
+            <a href="index.html" class="btn-secondary">Ver otros autos</a>
+            <button onclick="reiniciarQuiz()" class="btn-primary">Repetir quiz</button>
+        </div>
+    </div>
+</main>
+
+<a href="https://wa.me/527442854273" class="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<script src="app.js"></script>
+</body>
+</html>
